@@ -6,15 +6,4 @@
     - python2-httpie
     state: latest
 
-- name: Configure haproxy
-  template:
-    src: haproxy.cfg.j2
-    dest: /etc/haproxy/haproxy.cfg
-  notify: restart-haproxy
-
-- name: Start and enable HAProxy
-  service:
-    name: haproxy
-    state: started
-    enabled: true
-
+- include_tasks: configure-haproxy.yaml
