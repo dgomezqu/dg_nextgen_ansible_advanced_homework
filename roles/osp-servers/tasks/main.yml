@@ -2,7 +2,7 @@
 
 # tasks file for osp.servers
 - name: Create the servers
-  include_tasks: create-server.yml
+  include_tasks: create-servers.yml
   loop: "{{ __osp_servers }}"
   loop_control:
     loop_var: _server
